@@ -151,6 +151,123 @@ end
 # solve(solver::SKLEARN_ARD, ...) is implemented in ext/
 
 @doc raw"""
+SKLEARN_LinearReg
+"""
+struct SKLEARN_LinearReg
+    n_iter::Integer
+end
+
+function SKLEARN_LinearReg(; n_iter = 0)
+    # @warn "SKLearn will transition to MLJ in future, please upgrade your script to reflect this."
+    SKLEARN_LinearReg(n_iter)
+end
+
+@doc raw"""
+SKLEARN_LassoReg
+"""
+struct SKLEARN_LassoReg
+    alpha::Number
+end
+
+function SKLEARN_LassoReg(; alpha = 1.0)
+    @warn "SKLearn will transition to MLJ in future, please upgrade your script to reflect this."
+    SKLEARN_LassoReg(alpha)
+end
+
+
+@doc raw"""
+SKLEARN_RidgeReg
+"""
+struct SKLEARN_RidgeReg
+    alpha::Number
+end
+
+function SKLEARN_RidgeReg(; alpha = 1.0)
+    @warn "SKLearn will transition to MLJ in future, please upgrade your script to reflect this."
+    SKLEARN_RidgeReg(alpha)
+end
+
+@doc raw"""
+SKLEARN_ElasticNetReg
+"""
+struct SKLEARN_ElasticNetReg
+    alpha::Number
+    l1_ratio::Number
+end
+
+function SKLEARN_ElasticNetReg(; alpha = 0.05, l1_ratio = 0.5)
+    @warn "SKLearn will transition to MLJ in future, please upgrade your script to reflect this."
+    SKLEARN_ElasticNetReg(alpha, l1_ratio)
+end
+
+@doc raw"""
+SKLEARN_LassoLarsReg
+"""
+struct SKLEARN_LassoLarsReg
+    alpha::Number
+end
+
+function SKLEARN_LassoLarsReg(; alpha = 0.05)
+    @warn "SKLearn will transition to MLJ in future, please upgrade your script to reflect this."
+    SKLEARN_LassoLarsReg(alpha)
+end
+
+@doc raw"""
+SKLEARN_QuantileReg
+"""
+struct SKLEARN_QuantileReg
+    alpha::Number
+end
+
+function SKLEARN_QuantileReg(; alpha = 0.5)
+    @warn "SKLearn will transition to MLJ in future, please upgrade your script to reflect this."
+    SKLEARN_QuantileReg(alpha)
+end
+
+
+@doc raw"""
+SKLEARN_SGDReg
+"""
+struct SKLEARN_SGDReg
+    loss::String
+    max_iter::Number
+    verbose::Number
+end
+
+function SKLEARN_SGDReg(; loss = "huber", max_iter = 300, verbose = 2)
+    @warn "SKLearn will transition to MLJ in future, please upgrade your script to reflect this."
+    SKLEARN_SGDReg(loss, max_iter, verbose)
+end
+
+@doc raw"""
+SKLEARN_RansacReg
+"""
+struct SKLEARN_RansacReg
+    min_samples::Number
+end
+
+function SKLEARN_RansacReg(; min_samples = 20)
+    @warn "SKLearn will transition to MLJ in future, please upgrade your script to reflect this."
+    SKLEARN_RansacReg(min_samples)
+end
+
+
+@doc raw"""
+SKLEARN_HuberReg
+"""
+struct SKLEARN_HuberReg
+    epsilon::Number
+    max_iter::Number
+    alpha::Number
+end
+
+function SKLEARN_HuberReg(; epsilon = 1.5, max_iter = 200, alpha = 0.001)
+    @warn "SKLearn will transition to MLJ in future, please upgrade your script to reflect this."
+    SKLEARN_HuberReg(epsilon, max_iter, alpha)
+end
+
+
+@doc raw"""
 `struct TruncatedSVD` : linear least squares solver for approximately solving 
 ```math 
  θ = \arg\min \| A \theta - y \|^2 
